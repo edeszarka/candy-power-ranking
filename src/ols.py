@@ -44,3 +44,27 @@ def fit_ols(X, y):
         "dof": dof, "resid": resid, "XtX_inv": XtX_inv,
         "fitted": fitted, "names": names,
     }
+
+
+def contrast(res, weights):
+    # tests a weighted sum of coefficients, e.g. {"crispedricewafer": 1, "gummy": -1}
+    unknown = set(weights) - set(res["names"])
+    assert not unknown, f"not in model: {unknown}"
+    c = np.array([weights.get(name, 0) for name in res["names"]], dtype=float)
+    beta = res["table"]["coef"].to_numpy()
+
+    est = c @ beta
+    se = np.sqrt(res["sigma2"] * (c @ res["XtX_inv"] @ c))
+    t = est / se
+    p_value = 2 * stats.t.sf(abs(t), res["dof"])
+    t_crit = stats.t.ppf(0.975, res["dof"])
+    return {
+        "est": est, "se": se, "t": t, "p": p_value,
+        "ci_low": est - t_crit * se, "ci_high": est + t_crit * se,
+    }
+
+
+def predict(res, profile):
+    # expected winpercent for a product profile, e.g. {"chocolate": 1, "sugarpercent": 0.5}
+    # attributes not in the profile are 0; the CI is for the average product with this profile
+    return contrast(res, {"const": 1, **profile})
