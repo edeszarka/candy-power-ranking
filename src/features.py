@@ -2,22 +2,11 @@ from pathlib import Path
 
 import pandas as pd
 
-from src.load_data import download_data, load_data
+from src.load_data import BINARY_COLS, download_data, load_data
 
 LABELS_PATH = Path(__file__).resolve().parent.parent / "data" / "manual_labels.csv"
 
-BINARY_COLS = [
-    "chocolate",
-    "fruity",
-    "caramel",
-    "peanutyalmondy",
-    "nougat",
-    "crispedricewafer",
-    "hard",
-    "bar",
-    "pluribus",
-    "gummy",
-]
+MODEL_BINARY_COLS = BINARY_COLS + ["gummy"]
 
 
 def remove_coins(df):
@@ -41,7 +30,7 @@ def add_gummy(df, include_borderline=True):
 
 
 def build_features(df, include_price=False):
-    cols = BINARY_COLS + ["sugarpercent"]
+    cols = MODEL_BINARY_COLS + ["sugarpercent"]
     if include_price:
         cols = cols + ["pricepercent"]
     return df[cols], df["winpercent"]
@@ -53,4 +42,4 @@ if __name__ == "__main__":
     X, y = build_features(df)
     print(X.shape)
     print(list(X.columns))
-    print(X[BINARY_COLS].sum())
+    print(X[MODEL_BINARY_COLS].sum())

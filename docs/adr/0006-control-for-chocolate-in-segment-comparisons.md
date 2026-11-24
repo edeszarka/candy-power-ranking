@@ -5,7 +5,7 @@ Status: Accepted
 
 ## Context
 
-Every cookie-based candy contains chocolate, and no gummy does. A direct "gummy vs. cookie-based" comparison (49.0 vs. 66.2 mean `winpercent`) therefore mostly measures the chocolate effect (chocolate 60.9 vs. non-chocolate 42.1 across all 85 entries).
+Every cookie-based candy contains chocolate, and no gummy does. A direct "gummy vs. cookie-based" comparison (49.0 vs. 66.2 mean `winpercent`) therefore mostly measures the chocolate effect (chocolate 60.9 vs. non-chocolate 42.3 across all 83 candies).
 
 ## Decision
 
