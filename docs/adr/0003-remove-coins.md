@@ -5,7 +5,7 @@ Status: Accepted
 
 ## Context
 
-The dataset has 85 entries. "One dime" and "One quarter" are real coins that were used as a control in the original survey; they are not candies. Left in, they distort averages: for example, they are the only entries with zero binary features.
+The dataset has 85 entries. "One dime" and "One quarter" are real coins, not candies. Left in, they distort averages: for example, they are the only entries with zero binary features.
 
 ## Decision
 

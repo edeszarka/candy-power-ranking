@@ -10,7 +10,7 @@ MODEL_BINARY_COLS = BINARY_COLS + ["gummy"]
 
 
 def remove_coins(df):
-    # "One dime" and "One quarter" are coins used as a control in the survey, not candies
+    # "One dime" and "One quarter" are real coins, not candies
     return df[~df["competitorname"].isin(["One dime", "One quarter"])]
 
 

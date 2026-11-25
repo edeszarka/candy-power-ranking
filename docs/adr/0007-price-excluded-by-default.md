@@ -7,7 +7,7 @@ Status: Accepted
 
 `build_features(df, include_price=False)` returns the model features: the 9 binary columns, `gummy` and `sugarpercent`.
 
-The price is largely driven by ingredients, mainly chocolate, so it would absorb part of their effect. Since respondents didn't pay, price here doesn't measure actual demand. Lidl sets the new product's price later.
+Because price moves together with chocolate, it would absorb part of the chocolate effect. Price is set by Lidl, so it is a decision, not a product attribute.
 
 ## Decision
 
