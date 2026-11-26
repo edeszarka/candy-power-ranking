@@ -12,7 +12,7 @@ This is a small case study. Every extra tool (config files, CLI framework, tests
 - Plain Python functions in `src/`, no classes and no extra abstractions.
 - `src/load_data.py` downloads `candy-data.csv` with the standard library (`urllib`) only if the file is missing, then checks it with plain `assert`s (85 rows, no missing values, binary columns are 0/1, the percent columns are numeric).
 - The csv is committed in `data/`, so the analysis does not depend on the source URL staying available.
-- `requirements.txt` lists only pandas, numpy, scipy and matplotlib, pinned to the versions installed in a fresh virtualenv.
+- `requirements.txt` lists only pandas, numpy, scipy and matplotlib, plus notebook to run the notebooks, pinned to the versions installed in a fresh virtualenv.
 
 ## Consequences
 

@@ -20,6 +20,6 @@ Each segment is compared with its natural peers, on the 83 candies left after re
 
 ## Consequences
 
-- The comparison shows whether each segment adds something on top of chocolate (here about +6.5 and +8.8 points).
+- The comparison shows whether each segment adds something on top of chocolate (here about +6.5 and +8.9 points).
 - The direct gummy vs. cookie-based difference is not presented as a segment effect.
 - Any later model has to deal with the same overlap, together with the strong negative correlation between `chocolate` and `fruity`.
